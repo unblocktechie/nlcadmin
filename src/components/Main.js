@@ -131,9 +131,9 @@ function Main(){
     if(swapAdmin === account){
       setLoading(true);
 
-      //Maximum 25 transfers are permissible at a time
+      //Maximum 10 transfers are permissible at a time
 
-      if(multiTransfer.length <= 25){
+      if(multiTransfer.length <= 10){
         nlc.methods.transferToMultipleAccounts(multiTransfer).send({from:account})
         .once('confirmation', (confirmation) => {
           setLoading(false);
